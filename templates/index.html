@@ -1,0 +1,44 @@
+{{define "index"}}
+
+{{template "header"}}
+
+<div>
+
+</div>
+
+<div class="container articles">
+{{range $key, $value := .}}
+
+<div class="row">
+    <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="post-preview article">
+            <a href="/articles/{{$value.Id}}">
+                <h2 class="post-title">
+                    {{$value.Title}}
+                </h2>
+
+                <h3 class="post-subtitle">
+                    {{$value.Category}}
+                </h3>
+            </a>
+
+            <p class="post-meta">
+                Posted by {{$value.CreateDate}}
+            </p>
+        </div>
+    </div>
+</div>
+
+<hr>
+{{end}}
+</div>
+
+<div class="clearfix">
+
+</div>
+
+</div>
+
+{{template "footer"}}
+
+{{end}}
